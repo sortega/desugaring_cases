@@ -1,3 +1,3 @@
 package diabetic
 
-case class LabelledPoint(label: String, x: Int, y: Int)
+final case class LabelledPoint(label: String, x: Int, y: Int)
