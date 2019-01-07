@@ -2,7 +2,7 @@ package diabetic
 
 import org.scalatest.{FlatSpec, Matchers}
 
-class ModuleTest extends FlatSpec with Matchers {
+final class ModuleTest extends FlatSpec with Matchers {
 
   "Module" should "have a nice string conversion" in {
     Module.toString shouldBe "Module"
