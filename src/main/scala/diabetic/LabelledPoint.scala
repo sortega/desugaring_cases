@@ -1,17 +1,17 @@
 package diabetic
 
-class LabelledPoint(val label: String, val x: Int, val y: Int)
+final class LabelledPoint(val label: String, val x: Int, val y: Int)
   extends Product3[String, Int, Int] with Serializable {
 
   override def productPrefix = "LabelledPoint"
-  override def _1 = label
-  override def _2 = x
-  override def _3 = y
+  override def _1: String = label
+  override def _2: Int = x
+  override def _3: Int = y
 
   def copy(label: String = this.label, x: Int = this.x, y: Int = this.y): LabelledPoint =
     new LabelledPoint(label, x, y)
 
-  override def canEqual(that: Any) = that.isInstanceOf[LabelledPoint]
+  override def canEqual(that: Any): Boolean = that.isInstanceOf[LabelledPoint]
 
   override def equals(other: scala.Any): Boolean = other match {
     case that: LabelledPoint =>

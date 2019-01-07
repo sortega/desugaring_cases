@@ -2,9 +2,9 @@ package diabetic
 
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalatest.prop.PropertyChecks
-import org.scalatest.{FlatSpec, ShouldMatchers}
+import org.scalatest.{FlatSpec, Matchers}
 
-class LabelledPointTest extends FlatSpec with ShouldMatchers with PropertyChecks {
+final class LabelledPointTest extends FlatSpec with Matchers with PropertyChecks {
 
   implicit val arbitraryPoint = Arbitrary(for {
     label <- Gen.alphaStr
@@ -43,7 +43,7 @@ class LabelledPointTest extends FlatSpec with ShouldMatchers with PropertyChecks
   }
 
   it should "implement extensional hash code" in {
-    forAll { (value: LabelledPoint) =>
+    forAll { value: LabelledPoint =>
       val pointWithSameData = new LabelledPoint(value.label, value.x, value.y)
       value.hashCode() shouldBe pointWithSameData.hashCode()
     }

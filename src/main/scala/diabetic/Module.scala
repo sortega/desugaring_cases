@@ -8,7 +8,7 @@ object Module extends Product with Serializable {
 
   override def productArity = 0
 
-  override def canEqual(that: Any) = that == this
+  override def canEqual(that: Any): Boolean = that == this
 
-  override def toString = productPrefix
+  override def toString: String = productPrefix
 }
