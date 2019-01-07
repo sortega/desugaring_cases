@@ -10,7 +10,7 @@ by just preprending `case` to the definition of a class or object.
    favourite editor.
 2. Read `LabelledPoint` and `Module` and their tests.
 3. Remove the `case` keyword in both declarations.  I recommend you to comment
-   test not compiling until you can focus on them.
+   tests not compiling until you can focus on them.
    Alternatively checkout the `exercise` branch.
 4. Add code until tests pass again!
 
